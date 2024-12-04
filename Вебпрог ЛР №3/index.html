@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Bella Cucina - Ресторан</title>
+  <!-- Підключення Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Підключення стилів з SCSS -->
+  <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Навігаційне меню -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">La Bella Cucina</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Перемикач навігації">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Головна</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Меню</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Про нас</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Контакти</a>
+        </li>
+      </ul>
+      <!-- Кнопка для перемикання тем -->
+      <button id="theme-toggle" class="btn btn-outline-primary">Перемкнути тему</button>
+    </div>
+  </nav>
+
+  <!-- Секція зображення -->
+  <section>
+    <img src="img/Restaurant.jpg" alt="Restaurant" class="hero-image">
+  </section>
+
+  <!-- Опис ресторану -->
+  <section class="container section-description">
+    <h1>Добре приготоване меню з вишуканими стравами</h1>
+    <p class="lead">"La Bella Cucina" — це місце, де кожен смак зустрічається з витонченістю. Ми пропонуємо традиційні італійські страви, приготовані з любов'ю і якісних інгредієнтів.</p>
+  </section>
+
+  <!-- Контактна інформація -->
+  <section class="container text-center">
+    <h2>Наші контакти</h2>
+    <div class="contact-info">
+      <p><strong>Адреса:</strong> вул. Шевченка 12, Київ</p>
+      <p><strong>Телефон:</strong> +38 067 123 45 67</p>
+      <p><strong>Електронна пошта:</strong> info@labellacucina.ua</p>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer class="footer">
+    <p>© 2024 La Bella Cucina. Усі права захищені.</p>
+    <p><a href="#">Політика конфіденційності</a> | <a href="#">Умови використання</a></p>
+  </footer>
+
+  <!-- Підключення Bootstrap JS і Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- JavaScript для перемикання тем -->
+  <script>
+    const themeToggleButton = document.getElementById('theme-toggle');
+    let isDarkTheme = false;
+
+    themeToggleButton.addEventListener('click', () => {
+      if (isDarkTheme) {
+        document.body.classList.remove('dark-theme');
+        document.body.classList.add('light-theme');
+        isDarkTheme = false;
+      } else {
+        document.body.classList.remove('light-theme');
+        document.body.classList.add('dark-theme');
+        isDarkTheme = true;
+      }
+    });
+  </script>
+</body>
+
+</html>

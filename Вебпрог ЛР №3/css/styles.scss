@@ -1,0 +1,122 @@
+// Змінні для світлої та темної теми
+
+// Світла тема
+$light-theme-background: #ffffff;
+$light-theme-text: #343a40;
+$light-theme-accent: #007bff;
+
+// Темна тема
+$dark-theme-background: #343a40;
+$dark-theme-text: #ffffff;
+$dark-theme-accent: #ff6347; // Томато
+
+// Основні зміни для тем
+$theme-background: $light-theme-background;
+$theme-text: $light-theme-text;
+$theme-accent: $light-theme-accent;
+
+// Міксин для зміни теми
+@mixin theme($background, $text, $accent) {
+  background-color: $background;
+  color: $text;
+  a {
+    color: $accent;
+    &:hover {
+      color: darken($accent, 10%);
+    }
+  }
+}
+
+// Міксин для темної та світлої теми
+@mixin light-theme {
+  $theme-background: $light-theme-background;
+  $theme-text: $light-theme-text;
+  $theme-accent: $light-theme-accent;
+  @include theme($theme-background, $theme-text, $theme-accent);
+}
+
+@mixin dark-theme {
+  $theme-background: $dark-theme-background;
+  $theme-text: $dark-theme-text;
+  $theme-accent: $dark-theme-accent;
+  @include theme($theme-background, $theme-text, $theme-accent);
+}
+
+// Глобальні стилі
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: $theme-background;
+  color: $theme-text;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+// Навігація
+.navbar {
+  &-brand {
+    font-weight: bold;
+  }
+
+  &-nav {
+    .nav-item {
+      .nav-link {
+        color: $theme-text;
+        &:hover {
+          color: $theme-accent;
+        }
+      }
+    }
+  }
+}
+
+// Секція зображення
+.hero-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+// Опис ресторану
+.section-description {
+  padding: 50px 0;
+  text-align: center;
+  h1 {
+    font-size: 2.5rem;
+    color: $theme-text;
+  }
+  .lead {
+    font-size: 1.2rem;
+    color: $theme-text;
+  }
+}
+
+// Контактна інформація
+.contact-info {
+  background-color: $light-theme-background;
+  padding: 20px;
+  border-radius: 8px;
+  p {
+    font-size: 1rem;
+    color: $theme-text;
+  }
+}
+
+// Футер
+.footer {
+  background-color: $theme-accent;
+  color: $theme-background;
+  padding: 30px 0;
+  text-align: center;
+  a {
+    color: $theme-background;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
